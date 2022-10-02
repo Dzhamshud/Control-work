@@ -21,4 +21,32 @@
 [“Russia”, “Denmark”, “Kazan”] → []
 */
 
+int count = 0;
+string s = Console.ReadLine();// ввод строки
+string[] s1 = s.Split(' ');// преобразование строки в массив строк s1 через пробел
 
+for (int i = 0; i < s1.Length; i++)//цикл по массиву s1
+{
+    if (s1[i].Length <= 3) count++;//в счетчик записываем длину второго массива согласно условия задачи
+}
+
+string[] s2 = new string[count];//инициализируем массив s2
+int index = 0;//вводим индекс для массива s2
+for (int i = 0; i < s1.Length; i++)//цикл по массиву s1
+{
+    if (s1[i].Length <= 3)//проверяем условие
+        {
+        s2[index] = s1[i];//записываем значение в массив s2 удовлетворяющие условию
+        index++;//учелививаем индекс массива s2 на 1(инкремент)
+        }
+}
+
+void PrintArray (string[] array)//подпрограмма печати массива на экран
+{
+    for (int i = 0; i < array.Length; i++)
+        {
+        System.Console.Write($"{array[i]} ");
+        }
+}
+
+PrintArray (s2);//вызов подпрограммы печати массива
